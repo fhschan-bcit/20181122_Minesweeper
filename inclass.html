@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <img id='cat'>
+
+
+
+<script>
+    let y = 10;
+    console.log(y);
+    let x = 10;
+    console.log(x);
+
+    my_img = document.getElementById('cat')
+    my_img.src = './images/cat.jpeg';
+    my_img.style.width = '200px';
+    my_img.style.height = '100px';
+    my_img.style.position = 'absolute';
+    let value = my_img.style.top;
+    
+    my_img.style.left='100px';
+    my_img.style.top='500px';
+
+    test = my_img.style.top;
+    console.log(test);
+
+
+    function go_right(){
+        my_img = document.getElementById('cat');
+        left = parseInt(my_img.style.left);
+        if (left > window.innerWidth - parseInt(my_img.style.width))
+        {
+            document.getElementById('cat').style.left = '0px';
+        }
+        else{
+            document.getElementById('cat').style.left = parseInt(document.getElementById('cat').style.left)+1 +"px";
+        }
+        
+    }
+
+    setInterval(go_right, 1);
+
+
+
+</script>
+    
+</body>
+</html>

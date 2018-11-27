@@ -7,59 +7,9 @@
 </head>
 
 <body>
-    <div class='body'>
-        <canvas id='board' height="600" width="600"></canvas>
-    </div>
+    <table id ='h-board'></table>
     <script src="./js/board.js"></script>
-    <script src="./js/render_board.js"></script>
-    <script>
-
-        //init_board();
-        // init_btn_board();
-
-
-    // let images = new Array (9);
-
-    // for (i=0; i<images.length; i++){
-    //     let image = images[i];
-
-    //     image = document.createElement('IMG');
-    //     image.src = './images/square.jpeg';
-    //     image.style.height = '20px';
-    //     image.style.width = '20px';
-    //     image.addEventListener('click', function() {
-    //         image.src = "./images/Box_Grey.ico";
-    //     });
-    //     images[i] = image;
-    //     // document.body.append(image);
-    // }
-
-    // function set_bomb(number, img_obj){
-    //     new_num = Math.floor(Math.random() * number);
-    //     img_obj[new_num].addEventListener('click', function(){
-    //        img_obj[new_num] = './images/mine.jpeg';
-    //     })
-    //     return img_obj;
-    // }
-
-
-    // var table = document.getElementById('board');
-    //     array_index = 0;
-    //     for (j = 0; j < 3; j++) {
-    //         var row = table.insertRow(j);
-    //         for (i = 0; i < 3; i++) {
-    //             var cell = row.insertCell(i);
-    //             cell.appendChild(images[array_index]);
-    //             array_index++;
-    //         }
-    //     }
-    // document.body.append(table);
-
-
-
-
-    </script>
-
+    <script src="./js/handler.js"></script>
 </body>
 
 </html>

@@ -13,13 +13,13 @@ const NORM = 8;
 const HARD = 10;
 
 easy_btn.addEventListener('click', function(){
-    set_difficulty(EASY, EASY*3)
+    set_difficulty(EASY, EASY*2)
 })
 normal_btn.addEventListener('click', function(){
-    set_difficulty(NORM, NORM*3)
+    set_difficulty(NORM, NORM*2)
 })
 hard_btn.addEventListener('click', function(){
-    set_difficulty(HARD, HARD*3)
+    set_difficulty(HARD, HARD*2)
 })
 
 function set_difficulty(size, mine){
@@ -37,6 +37,7 @@ function set_difficulty(size, mine){
     }
     clearInterval(my_timer);
     seconds = 0;
+    bomb_count = 0;
     score.innerHTML = seconds;
     board=[]
     objects = [];

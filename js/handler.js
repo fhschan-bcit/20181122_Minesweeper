@@ -7,7 +7,7 @@
 let table = document.getElementById('h-board');
 
 // Creating board data through create_board.
-let array_board = create_board(size=9, mines=30);
+let array_board = create_board(size=9, mines=18);
 let BOARD_SIZE = array_board.length;
 let image_board = new Array(0);
 
@@ -89,6 +89,7 @@ function insert_content(x, y) {
     img.src = './images/Box_Grey.ico';
     img.onclick = function(){
         logic_reveal(x, y);
+        check_win();
     }
     return img;
 }
@@ -235,4 +236,28 @@ function game_over(){
     game_over_audio();
     reveal_mines();
     reveal_board();
+    score.innerHTML = String(seconds) + ' GAME OVER!';
+}
+
+function check_win(){
+    let count = 0;
+    let bomb_count = 0;
+    for (let x = 0; x < BOARD_SIZE; x++){
+        for(let y=0; y< BOARD_SIZE; y++){
+           if (array_board[x][y].isOpen == true){
+               count += 1;
+           }
+           if (array_board[x][y].bomb == true){
+               bomb_count +=1;
+           }
+        }
+    }
+    console.log('bomb count:', bomb_count)
+    console.log('count', count)
+    if ((count + bomb_count) >= (BOARD_SIZE*BOARD_SIZE)){
+        console.log('total', count + bomb_count)
+        console.log('board x', BOARD_SIZE * BOARD_SIZE)
+        clearInterval(my_timer);
+        score.innerHTML = String(seconds) + ' You Win!';
+    }
 }

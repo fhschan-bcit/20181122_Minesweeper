@@ -13,13 +13,13 @@ const NORM = 8;
 const HARD = 10;
 
 easy_btn.addEventListener('click', function(){
-    set_difficulty(EASY, EASY*2)
+    set_difficulty(EASY, EASY*3)
 })
 normal_btn.addEventListener('click', function(){
-    set_difficulty(NORM, NORM*2)
+    set_difficulty(NORM, NORM*3)
 })
 hard_btn.addEventListener('click', function(){
-    set_difficulty(HARD, HARD*2)
+    set_difficulty(HARD, HARD*3)
 })
 
 function set_difficulty(size, mine){

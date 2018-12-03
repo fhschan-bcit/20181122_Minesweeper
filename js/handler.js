@@ -2,11 +2,12 @@
 // Handles the minesweeper game logic, including populating the image on the page.
 // Nov 29, 2018
 
+//Global Variables
 
 let table = document.getElementById('h-board');
 
 // Creating board data through create_board.
-let array_board = create_board(9, 30);
+let array_board = create_board(size=9, mines=30);
 let BOARD_SIZE = array_board.length;
 let image_board = new Array(0);
 

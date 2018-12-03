@@ -66,8 +66,8 @@ function set_mine_hints(size) {
     */
     for (let x = 0; x <= size; x++) {
         for (let y = 0; y <= size; y++) {
-            let content = board[x][y];
-            if (content < 0) {
+            let value = board[x][y];
+            if (value < 0) {
                 check_mine_row(x, y, size)
             }
         }

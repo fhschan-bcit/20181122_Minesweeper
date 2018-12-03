@@ -6,19 +6,15 @@
 let table = document.getElementById('h-board');
 
 // Creating board data through create_board.
-let array_board = create_board();
+let array_board = create_board(9, 30);
 let BOARD_SIZE = array_board.length;
 let image_board = new Array(0);
-
 
 console.log('game board:', array_board);
 console.log('image board', image_board);
 console.log(BOARD_SIZE);
 store_img();
 print_board();
-//reveal_board();
-//reveal_mines();
-
 
 function reveal_board(){
     /*
@@ -223,11 +219,19 @@ function reveal_mines(){
     }
 }
 
+function game_over_audio(){
+    var audio = new Audio('./sound/explosion.wav');
+    audio.play();
+}
+
 function game_over(){
     /*
     Show game over state to user.
 
     *** Needs implementation!***
     */ 
+    clearInterval(my_timer);
+    game_over_audio();
     reveal_mines();
+    reveal_board();
 }

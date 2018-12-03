@@ -7,19 +7,28 @@ Nov 29, 2018
 <html lang="en">
 
 <head>
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/general.css">
 </head>
 
 <body>
-    <table id ='h-board'></table>
-    <button id='easy'>Easy</button>
-    <button id='normal'>Normal</button>
-    <button id='hard'>Hard</button>
+    <div class='container minesweeper'>
+        <h1>Minesweeper</h1>
+        <p>Time:</p>
+        <p id='score'>0</p>
+        <table id ='h-board'></table>
+        <br>
+        <button id='easy' class='btn-secondary'>Easy</button>
+        <button id='normal' class='btn-secondary'>Normal</button>
+        <button id='hard' class='btn-secondary'>Hard</button>
+        <button id='timer'>Reset Time</button>
+    </div>
 
     <!-- Must execute board first, then the handler! -->
+    <script src="./js/timer.js"></script>
     <script src="./js/board.js"></script>
     <script src="./js/handler.js"></script>
+    <script src="./js/set_difficulty.js"></script>
 </body>
 
 </html>

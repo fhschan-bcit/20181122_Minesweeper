@@ -222,6 +222,9 @@ function reveal_mines(){
 }
 
 function game_over_audio(){
+    /*
+     Plays an explosion sound when user loses.
+     */
     var audio = new Audio('./sound/explosion.wav');
     audio.play();
 }
@@ -229,8 +232,6 @@ function game_over_audio(){
 function game_over(){
     /*
     Show game over state to user.
-
-    *** Needs implementation!***
     */ 
     clearInterval(my_timer);
     game_over_audio();
@@ -240,6 +241,12 @@ function game_over(){
 }
 
 function check_win(){
+    /**
+     Check win scenario.
+
+     Keeps track of the counts and the bomb counts. If sum of count and bomb count adds to 
+     total squares on the board, the player wins.
+     */
     let count = 0;
     let bomb_count = 0;
     for (let x = 0; x < BOARD_SIZE; x++){
